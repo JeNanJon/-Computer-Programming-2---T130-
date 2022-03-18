@@ -1,0 +1,42 @@
+/*
+     a program that accept 10 positive integers and sort them
+     in a descending order(highest to lowest).
+*/
+
+#include <stdio.h>
+int main ()
+{
+
+    int number[30];
+    int i=0, j, a, n=10;
+        do{
+        printf("[%d] Input number: ",i+1);
+        scanf("%d",&number[i]);
+            if(number[i]<0){
+            printf("This is an invalid input. Try Again\n");
+            i--;
+		 }
+        i++;
+    }while(i<n);
+
+    for (i = 0; i < n; ++i)
+        {
+            for (j = i + 1; j < n; ++j)
+            {
+                if (number[i] < number[j])
+                {
+                    a = number[i];
+                    number[i] = number[j];
+                    number[j] = a;
+                }
+            }
+        }
+
+        printf("\nSorted list:");
+
+        for (i = 0; i < n; ++i)
+        {
+            printf("  %d", number[i]);
+        }
+    return 0;
+    }
