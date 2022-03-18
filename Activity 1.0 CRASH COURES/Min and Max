@@ -1,0 +1,33 @@
+/*
+
+    A program that accepts 10 positive integers and prints out the smallest
+    and the largest number(s) in the list.
+
+*/
+#include <stdio.h>
+int main(void)
+{
+
+	int i=1,y,min,max,n;
+
+	do{
+        printf("[%d] Input number: ",i);
+        scanf("%d", &y);
+        if(y<0){
+            printf("This is an invalid input. Try Again\n");
+            i--;
+		 }
+		 i++;
+		 if (y>=0){
+            if (y>max || i==1){
+                max = y;
+            }
+            else if(y<min || i==1){
+                min = y;
+            }
+		}
+	}while(i<=10);
+	printf("Min: %d\nMax: %d",min,max);
+	return(0);
+
+}
