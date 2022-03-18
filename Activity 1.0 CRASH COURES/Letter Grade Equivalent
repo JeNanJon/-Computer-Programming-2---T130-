@@ -1,0 +1,39 @@
+/*
+
+    A program that accepts an integer and converts it to the appropriate letter grade.
+    The input should be greater than 0 but less than 100.
+
+*/
+
+#include <stdio.h>
+int main(){
+    int num;
+    printf("Enter grade: ");
+    scanf("%d",&num);
+
+        if(num >= 92 && num<=100){
+        printf("Your letter Grade is A.");
+		}
+        else if ( num >=84  &&  num<=91){
+		printf("Your letter Grade is A-.");
+		}
+        else if ( num >=76 && num<=83){
+		printf("Your letter Grade is B.");
+		}
+        else if ( num >=68  &&  num<=75){
+		printf("Your letter Grade is B-.");
+		}
+        else if ( num >=60 && num<=67){
+		printf("Your letter Grade is C.");
+		}
+        else if ( num >=50  &&  num<59){
+		printf("Your letter Grade is D.");
+		}
+        else if ( num >=1 && num<50 ){
+		printf("Your letter Grade is F. ");
+		}
+        else {
+	    printf("Invalid Input. Try again.");
+        }
+    return 0;
+}
