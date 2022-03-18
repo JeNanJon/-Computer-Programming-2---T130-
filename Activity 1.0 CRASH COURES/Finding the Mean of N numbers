@@ -1,0 +1,32 @@
+/*
+    A program that accepts N positive integers,terminating only
+    if 0 is used as an input. It will then output the mean or
+    average of the positive numbers. negative numbers should
+    not be accepted as an input and should not be reflected in
+    the total number of inputs.
+*/
+#include <stdio.h>
+int main(){
+	int count=0;
+	int sum=0,num;
+	float mean;
+
+	do{
+		printf("[%d] Enter Integer:",count+1);
+		scanf("%d",&num);
+		if(num<0){
+            count--;
+		}
+		count++;
+            if (num>=0){
+            sum = num + sum;
+            mean = sum / count+1;
+            }
+		}while(num!=0);{
+
+
+        printf("Average = %f\n",mean);
+        printf("sum = %d\n",sum);
+	}
+	return 0;
+}
