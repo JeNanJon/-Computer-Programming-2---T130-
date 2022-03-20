@@ -1,0 +1,68 @@
+/*
+    a program that accepts one integer input (should be greater than 0)
+    and outputs the Binary,Octal, and Hexadecimal equivalent of that input.
+*/
+#include <stdio.h>
+void binary(int);
+void octal(int);
+void hexadecimal(int);
+int main() {
+    int A;
+    printf("Enter Decimal integer:");
+    scanf("%d",&A);
+        if (A<=0){
+            printf("should be greater than 0");
+            return 0;
+        }
+    printf("Binary: ");
+    binary(A);
+    printf("\nOctal: ");
+    octal(A);
+    printf("\nHexadecimal: ");
+    hexadecimal(A);
+    return 0;
+}
+void binary(int A){
+    int C[1000]; int i=1; int t;
+        while(A>0)
+        { C[i]=A%2;
+        A=A/2; t=i; i=i+1;
+        }
+    for(int k=t;k>=1;k--)
+
+    { printf("%d",C[k]);}
+    }
+void octal(int A){
+    int C[1000]; int i=1; int t;
+
+    while(A>0){
+        C[i]=A%8;
+        A=A/8; t=i; i=i+1;
+    }
+    for(int k=t;k>=1;k--){
+        printf("%d",C[k]);}
+}
+void hexadecimal(int A){
+    int C[1000]; int i=1; int t;
+
+    while(A>0){
+        C[i]=A%16;
+    A=A/16; t=i; i=i+1;
+    }
+    for(int k=t;k>=1;k--){
+        if(C[k]==10){
+             printf("A");}
+        if(C[k]==11){
+             printf("B");}
+        if(C[k]==12)
+        {printf("C");}
+        if(C[k]==13){
+            printf("D");}
+        if(C[k]==14){
+            printf("E");}
+        if(C[k]==15){
+            printf("F");}
+        if(C[k]<10){
+            printf("%d",C[k]);}
+    }
+}
