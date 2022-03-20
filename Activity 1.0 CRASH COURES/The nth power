@@ -1,0 +1,50 @@
+#include<stdio.h>
+int calculatenegativepower(int,int);
+int calculatepositivepower(int,int);
+int main (){
+
+    int x,y;
+    int res = 1,y1= y;
+
+        printf("Enter X:");
+        scanf("%d",&x);
+            if (x==0){
+                printf("x should not be equal 0. Try Again!");
+                return 0;
+            }
+        printf("Enter Y:");
+        scanf("%d",&y);
+        if (y>0){
+            calculatepositivepower(x,y);
+            }
+        else if (y<0){
+            calculatenegativepower(x,y);
+            }
+        else if (y==0){
+                printf("%d^%d = 1",x,y);
+            }
+    return 0;
+}
+int calculatenegativepower(int x,int y)
+{
+    int power = 1;
+    printf("%d^%d",x,y);
+    while(y!=0)
+    {
+        power = power*x;
+        y++;
+    }
+    printf(" = 1/ %d",power);
+    return 0;
+}
+int calculatepositivepower(int x,int y){
+    int power=1;
+    printf("%d^%d",x,y);
+    while(y>0)
+    {
+        power=power*x;
+        y--;
+    }
+    printf("=%d",power);
+    return 0;
+}
