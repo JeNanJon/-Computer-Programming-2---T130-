@@ -1,1 +1,60 @@
+/*
+        + Write a program in C to calculate and print the Electricity
+        bill of a given customer.
+        + The customer ID., and Unit Consumed by the user should
+        be inputted.
+        + Print All Customer Data (Customer ID., Unit Consumed,
+        Unit Charges, Surcharge,Customer Total Bill)
 
+*/
+#include<stdio.h>
+
+int unitcharge(int,float);
+int surcharge(float);
+int totalbill(float,float);
+int main()
+{
+    int custid, conu;
+    float chg, totalcharge,surchargeval,bill;
+        printf("Input Customer ID :");
+        scanf("%d",&custid);
+        printf("Input the Unit Consumed:");
+        scanf("%d",&conu);
+            if (conu<=200 && conu<250)
+                chg = 1.50;
+            else	if (conu>=250 && conu<400)
+                chg = 1.60;
+            else if (conu>=450 && conu<600)
+                chg = 1.80;
+            else if (conu>=600)
+                chg = 2.00;
+        totalcharge = unitcharge(conu,chg);
+        surchargeval = surcharge(totalcharge);
+        bill = totalbill(totalcharge,surchargeval);
+        unitcharge(conu,chg);
+        surcharge(totalcharge);
+        totalbill(totalcharge,surchargeval);
+        printf("\nElectricity Bill\n");
+        printf("Customer ID#                        :%d\n",custid);
+        printf("Unit Consumed                       :%d\n",conu);
+        printf("Unit Charges @P. %4.2f  per unit    :%8.2f\n",chg,totalcharge);
+        printf("Surcharge Amount                    :%8.2f\n",surchargeval);
+        printf("Total Customer bill                 :%8.2f\n",bill);
+
+}
+int unitcharge(int conu,float chg){
+    float totalcharge;
+    totalcharge = conu * chg;
+    return totalcharge;
+}
+int surcharge(float totalcharge){
+    float surchargeval;
+    if (totalcharge>400)
+        surchargeval = totalcharge*.10;
+        return surchargeval;
+}
+int totalbill(float totalcharge,float surchargeval){
+    float bill;
+    bill = totalcharge + surchargeval;
+    return bill;
+}
