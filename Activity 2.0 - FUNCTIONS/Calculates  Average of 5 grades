@@ -1,1 +1,21 @@
+//a program that calculates the average of students' grades(five subjects)
 
+#include <stdio.h>
+void calculateaverage(int);
+
+int main() {
+    int i,j=5,n;
+    int sum=0;
+    printf("Enter five Numbers:\n");
+        for (i=0;i<j;i++){
+            scanf("%d",&n);
+            sum = sum + n;
+         }
+    calculateaverage(sum);
+    return 0;
+}
+void calculateaverage(int sum){
+    int average;
+    average = sum/5;
+    printf("Average = %d",average);
+}
