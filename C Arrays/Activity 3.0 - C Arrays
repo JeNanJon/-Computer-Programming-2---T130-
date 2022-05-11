@@ -1,0 +1,36 @@
+/** Create a Program that adds all the array elements and prints the sum
+
++ Array size limit is 5 to 10 only.
++ The user must input the array size
++ The user must input the elements.                                     **/
+
+
+#include <stdio.h>
+
+int main() {
+
+    int a[10],i,n,sum=0;
+
+    printf("Enter size of the array : ");
+    scanf("%d",&n);
+    if (n<5||n>10){
+        printf("Array size limit is 5 to 10 only\n");
+        return main();
+    }
+
+    for(i=0; i<n; i++)
+    {
+        printf("Enter elements %d: ",i+1);
+        scanf("%d",&a[i]);
+    }
+
+
+    for(i=0; i<n; i++)
+    {
+
+        sum+=a[i];
+    }
+     printf("sum of all array element is : %d",sum);
+
+    return 0;
+}
