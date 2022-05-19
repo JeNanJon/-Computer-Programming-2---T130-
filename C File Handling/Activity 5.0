@@ -3,6 +3,23 @@
     + User must input how many lines to be appended
     + if the text file doesn't exist, the program will create 
       the text file
+[Example Test Case]
+*INPUT*
+Input the file location: C:\text.txt or The File path of your text file.
+Input how many lines to be appended: 5
+BSIT 
+EMC
+COT
+IT114
+CC113
+
+*OUTPUT*
+"Inside of the text.txt"
+BSIT 
+EMC
+COT
+IT114
+CC113
 */
 #include <stdio.h>
 
@@ -26,16 +43,5 @@ int main ()
     fputs(str, fptr);
   }
   fclose (fptr);
-
-	fptr = fopen (fname, "r");  
-	printf("\n Inside of the %s\n",fname);
-	str1 = fgetc(fptr);
-	while (str1 != EOF)
-		{
-			printf ("%c", str1);
-			str1 = fgetc(fptr);
-		}
-    printf("\n\n");
-    fclose (fptr);
   return 0;
 }
