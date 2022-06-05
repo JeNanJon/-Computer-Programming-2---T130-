@@ -1,1 +1,63 @@
+/***Write a code where the user can input multiple numbers of
+students (n) and output them into separate files.
 
+Data Inside file( no. of Students inputted)
+Student Name:
+Student ID Number:
+Math Grade:
+Science Grade:
+English Grade:
+Total Grade(calculate the total sum of grades):
+Grade Average(calculate the total average):              ***/
+
+#include <stdio.h>
+#include<stdlib.h>
+int main ()
+{
+  FILE * fptr;
+  int i,n;
+  int studentsID;
+  int mathG, scienceG, englishG;
+  int totalG=0, averageG=0;
+  char studentsname[100];
+  char str [100];
+  char filename[20];
+
+
+
+    printf("Enter Number of Students: ");
+ 	scanf("%d", &n);
+
+ 	for(i = 0; i < n ;i++)
+    {
+        printf("\nInput the file location or file name: ");
+        scanf("%s", filename);
+        fptr = fopen(filename, "w");
+        fgets(str, sizeof str, stdin);
+        fputs(str, fptr);
+
+        printf("Enter Students name: ");
+        fgets(studentsname, sizeof studentsname, stdin);
+        printf("Enter Students ID Number: ");
+        scanf("%d", &studentsID);
+        printf("\n Enter Math Grade: ");
+        scanf("%d", &mathG);
+        printf(" Enter Science Grade: ");
+        scanf("%d", &scienceG);
+        printf(" Enter English Grade: ");
+        scanf("%d", &englishG);
+        printf("Data stored Successfully!\n");
+
+        totalG = mathG + scienceG + englishG;
+        averageG = totalG / 3;
+
+        fprintf(fptr, "Student Name: %s", studentsname);
+        fprintf(fptr, "Student ID number: %d\n", studentsID);
+        fprintf(fptr, "\nMath Grade: %d", mathG);
+        fprintf(fptr, "\nScience Grade: %d", scienceG);
+        fprintf(fptr, "\nEnglish Grade: %d\n", englishG);
+        fprintf(fptr, "\nTotal grade: %d", totalG);
+        fprintf(fptr, "\nGrade average: %d", averageG);
+    }
+ return 0;
+}
